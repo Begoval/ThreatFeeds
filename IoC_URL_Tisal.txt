@@ -1,3 +1,5 @@
+registry.npmjs.org
+webhook.site
 protonmail.com
 vaadiandkoh.com
 yopmail.com
