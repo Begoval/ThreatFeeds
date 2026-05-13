@@ -44,7 +44,7 @@ def extraer_datos(body):
 
     # 1. Extraer Valor (IP o URL)
     ip_match = re.search(r'(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})', clean_body)
-    url_match = re.search(r'(https?://[^\s\n\r]+)', clean_body)
+    url_match = re.search(r'([^\s\n\r]+)', clean_body)
 
     valor = None
     tipo = "Desconocido"
