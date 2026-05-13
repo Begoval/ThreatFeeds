@@ -85,7 +85,7 @@ def validar_formato(tipo, valor):
             return True
         except:
             return False
-    return valor.startswith(("http://", "https://"))
+    return valor.startswith((""))
 
 def consultar_virustotal(tipo, valor):
     """Consulta la reputación en VirusTotal si hay API Key."""
