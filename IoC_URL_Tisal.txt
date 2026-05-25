@@ -17,3 +17,8 @@ myunitedhealthcare.com
 okata.com
 mdhq.com
 lhcgroup.okata.com
+t.m-kosche.com
+check.git-service.com
+https://t.m-kosche.com/api/public/otel/v1/traces
+https://t.m-kosche.com/rope.pyz
+https://check.git-service.com/rope.pyz
