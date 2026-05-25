@@ -14,7 +14,7 @@ USUARIO_ACTUAL = os.getenv('GITHUB_ACTOR')
 
 # --- 🛡️ LISTA BLANCA DE USUARIOS AUTORIZADOS ---
 # Agrega aquí los nombres de usuario de GitHub de las personas permitidas
-USUARIOS_AUTORIZADOS = ["estevenguayara", "JeisoncortesN1", "usuario_analista_2"]
+USUARIOS_AUTORIZADOS = ["estevenguayara", "JeisoncortesN1", "SOCBP3"]
 
 def enviar_comentario_github(mensaje, cerrar=False):
     """Publica un comentario en el Issue y opcionalmente lo cierra."""
