@@ -4,7 +4,6 @@ dnslog.cn
 mega.cl
 mega.nz
 mega.io
-registry.npmjs.org
 webhook.site
 protonmail.com
 vaadiandkoh.com
