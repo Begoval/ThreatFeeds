@@ -28,3 +28,4 @@ marketplace.visualstudio.com
 xhspot.com
 faphouse.com
 aff.9breakingnews.com
+registry.npmjs.org
