@@ -39,21 +39,40 @@ if USUARIO_ACTUAL not in USUARIOS_AUTORIZADOS:
 
 # --- FUNCIONES DE EXTRACCIÓN Y PROCESAMIENTO ---
 def extraer_datos(body):
-    """Analiza el cuerpo del Issue para extraer el valor y la fuente."""
+    """Analiza el cuerpo del Issue para extraer el valor y la fuente de forma precisa."""
+    # Eliminar retornos de carro
     clean_body = body.replace('\r', '')
 
-    # 1. Extraer Valor (IP o URL)
-    ip_match = re.search(r'(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})', clean_body)
-    url_match = re.search(r'([^\s\n\r]+)', clean_body)
+    # 1. Regex de IP (Se mantiene igual, funciona perfecto)
+    ip_pattern = r'\b(?:[0-9]{1,3}\.){3}[0-9]{1,3}\b'
+    
+    # 2. Regex de URL Optimizada:
+    # Opción A: Debe empezar con http:// o https:// obligatorio seguido de caracteres válidos.
+    # Opción B: Debe ser un dominio puro que NO empiece con caracteres especiales como # y tenga una extensión de 2 a 6 letras.
+    url_pattern = r'(https?://[^\s\n\r]+|[a-zA-Z0-9][a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}(?:/[^\s\n\r]*)?)'
+
+    ip_match = re.search(ip_pattern, clean_body)
+    
+    # Buscamos la URL línea por línea o filtrando líneas que solo tengan Markdown
+    url_match = None
+    for linea in clean_body.split('\n'):
+        # Ignoramos líneas que empiezan con marcas de encabezados de Markdown (###) o comentarios
+        if linea.strip().startswith('#'):
+            continue
+        
+        match = re.search(url_pattern, linea)
+        if match:
+            url_match = match
+            break # Encontramos la primera URL real fuera de los títulos
 
     valor = None
     tipo = "Desconocido"
 
     if ip_match:
-        valor = ip_match.group(1).strip()
+        valor = ip_match.group(0).strip()
         tipo = "IP"
     elif url_match:
-        valor = url_match.group(1).strip()
+        valor = url_match.group(0).strip()
         tipo = "URL"
 
     # 2. Identificar Fuente (Mapeo de las 5 fuentes solicitadas)
