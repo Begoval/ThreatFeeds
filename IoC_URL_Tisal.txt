@@ -34,6 +34,7 @@ dreff-nsdns.beer
 printwithblazer.com
 https://marketplace.windsurf.com/vscode/gallery
 https://open-vsx.org/vscode/gallery
+azurenetfiles.net
 https://marketplace.cursorapi.com/_apis/public/gallery
 https://marketplace.visualstudio.com/_apis/public/gallery
 https://go.wps.com/a8M4ofQQ8WW2
