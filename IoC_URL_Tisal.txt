@@ -55,3 +55,6 @@ manahegazeda.org
 code.verification-claude-cdn.beer
 novactech.in
 spadeinfotech.net
+apiv2.wirevpn.app
+apiv3.wirevpn.app
+apiv4.wirevpn.app
