@@ -56,3 +56,10 @@ code.verification-claude-cdn.beer
 novactech.in
 spadeinfotech.net
 owa-ms365.com
+https://www.dropbox.com/
+https://www.mediafire.com/
+https://mega.io/
+https://www.pcloud.com/
+https://www.icloud.com/
+https://cloud.huawei.com/
+https://partners.idrive.com/
